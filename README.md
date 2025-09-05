@@ -42,7 +42,7 @@ Student code → (Model) → *detects* typo/concept/reasoning → *generates* a 
 
 See full descriptions in [`evaluation/scoring.md`](evaluation/scoring.md).
 
-## Results Templates (fill after runs)
+## Results Templates 
 
 **Table 1 — Mistake-type discrimination**
 
