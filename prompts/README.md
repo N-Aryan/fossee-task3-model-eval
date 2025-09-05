@@ -14,3 +14,7 @@ Prompts are written for two learner profiles â€” **beginner** and **advanced** â
 ## Output Contract (used by evaluation)
 Every model response must follow this schema:
 
+Diagnosis: <typo | conceptual | reasoning | uncertain>
+Hint: <one or two sentences, no corrected code>
+
+This ensures **consistency**, **non-revealing feedback**, and **ease of scoring** across all evaluation runs.
