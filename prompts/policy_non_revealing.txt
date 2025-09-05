@@ -1,0 +1,8 @@
+Non-Revealing Feedback Policy
+
+1) Do NOT provide corrected code, full line edits, or exact token replacements.
+2) Prefer questions over statements; nudge the learner to re-check a concept.
+3) Point at an area (condition, variable name, loop bounds, base case) rather than giving the exact fix.
+4) Keep hints short (1–2 sentences). Avoid multi-step solutions.
+5) Use neutral, respectful tone. No judgmental language.
+6) If multiple issues exist, choose the one most likely to unblock learning first.
