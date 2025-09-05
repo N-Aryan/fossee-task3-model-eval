@@ -3,46 +3,51 @@
 > FOSSEE Autumn 2025 — Python Screening Task 3  
 > Author: Aryan Narang
 
-## TL;DR (60-second overview)
-- **Goal:** Debugging se aage jaakar **student competence** (typo vs conceptual vs reasoning) ko identify karna aur **non-revealing, Socratic hints** dena.
-- **Models:** CodeT5 (gen), CodeBERT (encoder baseline), StarCoder (large gen).
-- **How we evaluate:**  
-  1) **Discrimination:** Typo vs Conceptual vs Reasoning (confusion matrix, per-class F1)  
-  2) **Hint Quality:** Clarity, Non-Revealing, Actionability, Learner-Fit (0–3 each; /12)
-- **What’s inside:** Labeled buggy snippets, prompt specs (beginner/advanced), scoring rubric, results templates.
-- **Why open-source:** Reproducible, deployable in education without vendor lock-in.
+## Executive Summary
+- **Objective.** Move beyond error detection to analyze **student competence**—discriminating **typo**, **conceptual**, and **reasoning** mistakes—and produce **non-revealing, Socratic hints**.
+- **Models considered.** CodeT5 (encoder–decoder), CodeBERT (encoder baseline), StarCoder (decoder-only LLM).
+- **Evaluation axes.**  
+  1) **Mistake-type discrimination:** confusion matrix and per-class F1.  
+  2) **Hint quality:** Clarity, Non-Revealing, Actionability, Learner-Fit (0–3 each; total /12).
+- **Repository contents.** Labeled buggy snippets, prompt specifications (beginner/advanced), scoring rubric, and results templates.
+- **Why open-source.** Reproducible and deployable in educational settings without vendor lock-in.
 
 ## Quick Links
-- **Deep paper-style write-up:** [`docs/DEEP_README.md`](docs/DEEP_README.md)
-- **Examples (dataset):** [`examples/`](examples/) • [`labels.csv`](examples/labels.csv)
-- **Prompt specs:** [`prompts/`](prompts/) (beginner, advanced, few-shots)
-- **Evaluation scaffold:** [`evaluation/`](evaluation/) (`evaluate.py`, `scoring.md`)
+- **Full paper-style write-up:** [`docs/DEEP_README.md`](docs/DEEP_README.md)  
+- **Examples (dataset):** [`examples/`](examples/) • [`labels.csv`](examples/labels.csv)  
+- **Prompt specifications:** [`prompts/`](prompts/) (beginner, advanced, few-shots)  
+- **Evaluation scaffold:** [`evaluation/`](evaluation/) (`evaluate.py`, `scoring.md`)  
 - **References:** [`references.md`](references.md) • License: MIT
 
-## How to Review in 3 Minutes
-1. **Skim** the Results templates (below).  
-2. **Open** 1–2 files in `examples/` + corresponding hints (your model runs/notes).  
-3. **Check** rubric dimensions in `scoring.md` (non-revealing policy honored?).  
-4. **Deep dive** if needed: [`docs/DEEP_README.md`](docs/DEEP_README.md).
+## How to Review (Rapid)
+1. Scan the **Results templates** below.  
+2. Open 1–2 files in `examples/` and the corresponding model outputs/notes.  
+3. Verify rubric dimensions in `evaluation/scoring.md` (especially **Non-Revealing** policy).  
+4. For full context, read [`docs/DEEP_README.md`](docs/DEEP_README.md).
 
-## Methods in One Picture (mental model)
-Student code → (Model) → *detects* typo/concept/reasoning → *generates* a **Socratic hint** (no solution) → student iterates.
+## Conceptual Pipeline
+Student code → Model analysis → **Classify** (typo / conceptual / reasoning) → **Generate** a Socratic hint (no solution) → Student revises.
 
 <details>
 <summary><b>Model survey (compact)</b></summary>
 
-- **CodeBERT (encoder, ~125M, MIT):** Fast representations; great for classification baselines; not generative → no hints by itself.
-- **CodeT5 (enc-dec, ~220M/770M, Apache-2.0):** Understands + generates; controllable; good for short, non-revealing hints; sometimes terse.
-- **StarCoder (decoder-only, 15.5B, OpenRAIL-M):** Strongest analysis & fluent hints; risk of “overhelping” (solution leak) without strict prompts; heavy compute.
+- **CodeBERT** (encoder, ~125M, MIT): efficient representations; suitable for classification baselines; **not generative** (no hints natively).  
+- **CodeT5** (encoder–decoder, ~220M/770M, Apache-2.0): understands + generates; controllable; typically concise, non-revealing hints; sometimes terse.  
+- **StarCoder** (decoder-only, 15.5B, OpenRAIL-M): strongest analysis and fluent hints; risk of “over-helping” (solution leakage) without strict prompting; higher compute.
+
 </details>
 
-## Evaluation Rubrics (summary)
-- **Discrimination:** confusion matrix + F1 for {typo, conceptual, reasoning}
-- **Hint Quality (/12):** Clarity (0–3), Non-Revealing (0–3), Actionability (0–3), Learner-Fit (0–3)
+## Evaluation Rubrics (Summary)
+- **Mistake-type discrimination:** confusion matrix + per-class F1 for {typo, conceptual, reasoning}.  
+- **Hint quality (0–3 each; /12 total):**  
+  - **Clarity** — understandable phrasing.  
+  - **Non-Revealing** — avoids giving the solution.  
+  - **Actionability** — directs the next step.  
+  - **Learner-Fit** — appropriate for the assumed level.
 
-See full descriptions in [`evaluation/scoring.md`](evaluation/scoring.md).
+See full descriptors in [`evaluation/scoring.md`](evaluation/scoring.md).
 
-## Results Templates 
+## Results Templates
 
 **Table 1 — Mistake-type discrimination**
 
@@ -59,6 +64,6 @@ See full descriptions in [`evaluation/scoring.md`](evaluation/scoring.md).
 | CodeT5    |         |               |               |             |                 |
 | StarCoder |         |               |               |             |                 |
 
-> Policy: **Never** include full corrected code in hints. Prefer questions + micro-diagnostics.
+> **Policy.** Hints must **not** include full corrected code. Prefer questions and micro-diagnostics.
 
-## Repo Layout
+## Repository Structure
