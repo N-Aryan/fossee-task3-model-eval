@@ -1,0 +1,10 @@
+filename,label
+buggy_typo_1.py,typo
+buggy_typo_2.py,typo
+buggy_typo_3.py,typo
+buggy_conceptual_1.py,conceptual
+buggy_conceptual_2.py,conceptual
+buggy_conceptual_3.py,conceptual
+buggy_reasoning_1.py,reasoning
+buggy_reasoning_2.py,reasoning
+buggy_reasoning_3.py,reasoning
