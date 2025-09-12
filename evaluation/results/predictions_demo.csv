@@ -1,0 +1,5 @@
+filename,gold_label,model_name,predicted_label,hint
+buggy_typo_1.py,typo,starcoder,typo,"The loop header looks almost correct — check the punctuation."
+buggy_conceptual_1.py,conceptual,codet5,conceptual,"Re-check the condition for even numbers."
+buggy_reasoning_1.py,reasoning,codebert,typo,"Logic flow may be flawed — check how the maximum value updates."
+
