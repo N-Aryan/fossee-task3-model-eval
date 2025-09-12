@@ -1,5 +1,9 @@
 # Evaluating Open-Source Models for Student Competence Analysis (Python)
 
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Models](https://img.shields.io/badge/Models-CodeT5%20|%20CodeBERT%20|%20StarCoder-orange.svg)
+
 > FOSSEE Autumn 2025 — Python Screening Task 3  
 > Author: Aryan Narang
 
@@ -37,6 +41,18 @@ Student code → Model analysis → **Classify** (typo / conceptual / reasoning)
 
 </details>
 
+## Quick Reproduce
+
+Clone the repo, install dependencies, and run a demo evaluation:
+
+```bash
+git clone https://github.com/N-Aryan/fossee-task3-model-eval.git
+cd fossee-task3-model-eval
+pip install -r requirements.txt
+python evaluation/evaluate.py --model codet5 --level beginner
+python evaluation/compute_metrics.py --pred evaluation/results/predictions_codet5.csv
+```
+
 ## Evaluation Rubrics (Summary)
 - **Mistake-type discrimination:** confusion matrix + per-class F1 for {typo, conceptual, reasoning}.  
 - **Hint quality (0–3 each; /12 total):**  
@@ -67,3 +83,25 @@ See full descriptors in [`evaluation/scoring.md`](evaluation/scoring.md).
 > **Policy.** Hints must **not** include full corrected code. Prefer questions and micro-diagnostics.
 
 ## Repository Structure
+
+```
+├─ examples/          # Buggy Python snippets + labels.csv
+├─ prompts/           # Prompt specs (beginner, advanced, few-shots)
+├─ evaluation/        # Scripts + scoring rubric + results
+├─ docs/              # Deep research-style writeup
+├─ references.md      # Model + paper links
+└─ README.md          # Main overview
+```
+
+
+## Citation
+If you use this scaffold, please cite:
+
+```bibtex
+@misc{fossee2025,
+  author = {Aryan Narang},
+  title = {Evaluating Open-Source Models for Student Competence Analysis},
+  year = {2025},
+  howpublished = {\url{https://github.com/N-Aryan/fossee-task3-model-eval}}
+}
+
