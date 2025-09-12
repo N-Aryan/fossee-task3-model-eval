@@ -1,0 +1,2 @@
+Diagnosis: conceptual
+Hint: Remember which remainder value corresponds to even numbers — revisit the condition in the loop.
