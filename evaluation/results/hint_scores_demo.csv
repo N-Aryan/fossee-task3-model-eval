@@ -1,0 +1,4 @@
+filename,model_name,clarity,non_revealing,actionability,learner_fit,overall
+buggy_typo_1.py,starcoder,3,3,2,3,11
+buggy_conceptual_1.py,codet5,2,3,2,2,9
+buggy_reasoning_1.py,codebert,1,2,1,1,5
