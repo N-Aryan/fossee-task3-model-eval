@@ -1,5 +1,23 @@
 # Evaluating Open-Source Models for Student Competence Analysis (Python)
 
+## Table of Contents
+- [Abstract](#abstract)
+- [Background & Motivation](#background--motivation)
+- [Model Survey](#model-survey)
+  - [CodeBERT](#codebert)
+  - [CodeT5](#codet5)
+  - [StarCoder](#starcoder)
+- [Methodology](#methodology)
+- [Reasoning (Required Answers)](#reasoning-required-answers)#
+- [Results](#results)
+- [Discussion](#discussion)
+- [Limitations](#limitations)
+- [Future Work](#future-work)
+- [Ethical Considerations](#ethical-considerations)
+- [References](#references)
+  
+  ---
+  
 ## Abstract
 We evaluate open-source, code-oriented AI models for student competence analysis in Python.  
 The goal is not just to locate errors in student code, but to infer **why** mistakes occur and to generate **non-revealing, Socratic prompts** that guide learning without directly giving away solutions.  
@@ -799,3 +817,9 @@ Ethical considerations are central to deploying AI tutors.
 
 - BigCode (2024). *StarCoder2 Announcement.*  
   [arXiv Preprint](https://arxiv.org/abs/2402.12327)  
+
+
+## Acknowledgment
+This scaffold was developed as part of the FOSSEE Autumn 2025 task submission.
+
+
