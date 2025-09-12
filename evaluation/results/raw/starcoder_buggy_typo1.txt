@@ -1,0 +1,4 @@
+Diagnosis: typo
+Hint: The loop header looks almost correct — check if punctuation is missing at the end of the line.
+
+
