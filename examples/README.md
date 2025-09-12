@@ -12,3 +12,14 @@ This folder contains **buggy Python code snippets** for evaluation.
 
 These examples are intentionally minimal and educational.  
 They illustrate how models are expected to produce both a **diagnosis** and a **non-revealing hint**.
+
+
+## Sample labels.csv
+
+| filename | gold_label   |
+|----------|--------------|
+| bug1.py  | typo         |
+| bug2.py  | conceptual   |
+| bug3.py  | reasoning    |
+
+
