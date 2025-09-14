@@ -52,6 +52,8 @@ pip install -r requirements.txt
 python evaluation/evaluate.py --model codet5 --level beginner
 python evaluation/compute_metrics.py --pred evaluation/results/predictions_codet5.csv
 ```
+> **Note.** Demo outputs (`predictions_demo.csv`, `hint_scores_codet5.csv`, `metrics_codet5.json`)  
+> are included to prove the evaluation pipeline runs successfully even without full model access.
 
 ## Evaluation Rubrics (Summary)
 - **Mistake-type discrimination:** confusion matrix + per-class F1 for {typo, conceptual, reasoning}.  
